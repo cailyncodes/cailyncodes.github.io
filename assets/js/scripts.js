@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function() {
-	
+
     /*
 	    Top menu
 	*/
@@ -26,12 +26,12 @@ jQuery(document).ready(function() {
 		else if(element_class == 'menu-testimonials') { scroll_to = $(".testimonials").offset().top - nav_height - 60; }
 		else if(element_class == 'menu-about-us') { scroll_to = $(".whos-behind").offset().top - nav_height - 60; }
 		else if(element_class == 'menu-contact') { scroll_to = $(".contact").offset().top - nav_height - 60; }
-		
+
 		if($(window).scrollTop() != scroll_to && element_class !== undefined) {
 			$('html, body').animate({scrollTop: scroll_to}, 1000);
 		}
 	});
-	
+
     /*
         Background slideshow
     */
@@ -40,29 +40,30 @@ jQuery(document).ready(function() {
     , "assets/img/backgrounds/2.jpg"
     , "assets/img/backgrounds/3.jpg"
     ], {duration: 3000, fade: 750});
-    
+
     $('.about-container').backstretch("assets/img/backgrounds/2.jpg");
-    
+
     $('.whos-behind-container').backstretch("assets/img/backgrounds/4.jpg");
 
     /*
         Countdown initializer
     */
-    var now = new Date();
-    var countTo = 25 * 24 * 60 * 60 * 1000 + now.valueOf();    
+    //var now = new Date();
+		var date = new Date("01/07/2017");
+    var countTo = date.valueOf();//25 * 24 * 60 * 60 * 1000 + now.valueOf();
     $('.timer').countdown(countTo, function(event) {
     	$(this).find('.days').text(event.offset.totalDays);
     	$(this).find('.hours').text(event.offset.hours);
     	$(this).find('.minutes').text(event.offset.minutes);
     	$(this).find('.seconds').text(event.offset.seconds);
     });
-    
+
     /*
         Testimonials
     */
     $('.testimonial-active').html('<p>' + $('.testimonial-single:first p').html() + '</p>');
     $('.testimonial-single:first .testimonial-single-image img').css('opacity', '1');
-    
+
     $('.testimonial-single-image img').on('click', function() {
     	$('.testimonial-single-image img').css('opacity', '0.5');
     	$(this).css('opacity', '1');
@@ -72,7 +73,7 @@ jQuery(document).ready(function() {
     		$(this).fadeIn(400);
     	});
     });
-    
+
     /*
 	    Show latest tweets
 	*/
@@ -83,7 +84,7 @@ jQuery(document).ready(function() {
 		count: 5,
 		loading_text: 'loading ...'
 	});
-	
+
 	$('.latest-tweets .tweets .tweet_list li').append('<span class="tweet_nav"></span>');
 	$('.latest-tweets .tweets .tweet_list li:first .tweet_nav').css('background', '#e8643e');
 	$('.latest-tweets .tweets .tweet_list li .tweet_time').hide();
@@ -110,7 +111,7 @@ jQuery(document).ready(function() {
     var position = new google.maps.LatLng(45.067883, 7.687231);
     $('.contact-address .map').gmap({'center': position, 'zoom': 15, 'disableDefaultUI':true, 'callback': function() {
             var self = this;
-            self.addMarker({'position': this.get('map').getCenter() });	
+            self.addMarker({'position': this.get('map').getCenter() });
         }
     });
 
@@ -145,7 +146,7 @@ jQuery(document).ready(function() {
             }
         });
     });
-    
+
     /*
 	    Contact form
 	*/
@@ -180,6 +181,5 @@ jQuery(document).ready(function() {
 	    });
 	});
 
-    
-});
 
+});
