@@ -1,0 +1,55 @@
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	.show-menu, .hide-menu { right: 50px; }
+
+	.coming-soon p { padding: 0 120px; }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .timer .days-wrapper, .timer .hours-wrapper, .timer .minutes-wrapper, .timer .seconds-wrapper {
+        width: 140px; height: 140px; margin: 0 7px; padding-top: 20px;
+    }
+    .timer .days, .timer .hours, .timer .minutes, .timer .seconds { font-size: 60px; line-height: 70px; }
+    
+    .coming-soon p, .about p, .whos-behind p, .contact p { padding: 0; }
+
+}
+
+@media (max-width: 991px) {
+
+	.show-menu { right: 30px; }
+	.hide-menu { position: static; top: auto; right: auto; z-index: auto; }
+	.hide-menu a { padding-top: 0; }
+
+}
+
+@media (max-width: 767px) {
+
+    h2, h3 { font-size: 36px; padding: 0 20px; }
+
+    .coming-soon p, .about p, .whos-behind p, .contact p { padding: 0; }
+
+    .timer .days-wrapper, .timer .hours-wrapper, .timer .minutes-wrapper, .timer .seconds-wrapper {
+        width: 140px; height: 140px; margin: 7px; padding-top: 20px;
+    }
+    .timer .days, .timer .hours, .timer .minutes, .timer .seconds { font-size: 60px; line-height: 70px; }
+    
+    .subscribe form input.subscribe-email, .subscribe button.btn { width: 100%; }
+    
+    .contact-form, .contact-address { text-align: center; }
+    .contact-form { padding-bottom: 40px; }
+    .contact-form form input, .contact-form form textarea { width: 100%; }
+    
+    .footer-copyright p, .footer-social { text-align: center; }
+    .footer-social { margin-top: 15px; }
+
+}
+
+@media (max-width: 400px) {
+
+	.show-menu { right: 10px; }
+
+}
