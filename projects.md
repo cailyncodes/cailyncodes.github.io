@@ -70,7 +70,7 @@ tile-order: 3
 				<header class="major">
 					<h3>Database of Indigenous Slavery in the Americas</h3>
 				</header>
-				<p>A full-stack project from the Center of Digital Scholarship that allows for the collection of data surrounding enslaved indigenous persons in North and South American circa 1300 to 1500.</p>
+				<p>A full-stack project from the Center of Digital Scholarship that allows for the collection of data surrounding enslaved indigenous persons in North and South America circa 1300 to 1500.</p>
 				<ul class="actions">
 					<li><a href="/projects/disa" class="button">Learn more</a></li>
 				</ul>
@@ -86,8 +86,7 @@ tile-order: 3
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>The Question(s) of Success:</h3>
-					<h4><em>Understanding Racialized Conceptions of Success in Mexican and Jewish Acculturation</em></h4>
+					<h3>The Question(s) of Success:<em>Understanding Racialized Conceptions of Success in Mexican and Jewish Acculturation</em></h3>
 				</header>
 				<p>A comparative analysis and close reading of <em>George Washington Gomez</em> by Chicano author Americo Paredes and <em>The Rise of David Levinsky</em> by Jewish immigrant Abraham Cahan.</p>
 				<ul class="actions">
