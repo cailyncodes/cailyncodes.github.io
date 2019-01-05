@@ -86,7 +86,7 @@ tile-order: 3
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>The Question(s) of Success:<em>Understanding Racialized Conceptions of Success in Mexican and Jewish Acculturation</em></h3>
+					<h3>The Question(s) of Success:<br /><em>Understanding Racialized Conceptions of Success in Mexican and Jewish Acculturation</em></h3>
 				</header>
 				<p>A comparative analysis and close reading of <em>George Washington Gomez</em> by Chicano author Americo Paredes and <em>The Rise of David Levinsky</em> by Jewish immigrant Abraham Cahan.</p>
 				<ul class="actions">
