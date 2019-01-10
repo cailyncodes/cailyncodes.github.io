@@ -1,6 +1,6 @@
 ---
-title: <span>The Question(s) of Success: <em>Understanding Racialized Conceptions of Success in Mexican and Jewish Acculturation</em></span>
 layout: page
+title: The Question(s) of Success
 image: assets/img/projects.jpeg
 ---
 
