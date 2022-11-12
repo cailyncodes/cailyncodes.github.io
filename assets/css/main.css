@@ -1,0 +1,42 @@
+:root {
+  --primary: #121212;
+  --secondary: #252525;
+  --accent: #363636;
+  --utility: #626262;
+  --bg: #ececec;
+}
+
+html, body {
+  background-color: var(--bg);
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 700px;
+  min-width: 400px;
+  width: 80%;
+}
+
+p {
+  color: var(--primary);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 + span > strong {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+span + p > em {
+  color: var(--utility);
+}
