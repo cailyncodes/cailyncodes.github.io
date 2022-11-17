@@ -4,6 +4,8 @@
   --accent: #363636;
   --utility: #626262;
   --bg: #ececec;
+
+  --content-bp-1: 400px;
 }
 
 html, body {
@@ -23,8 +25,17 @@ main {
   flex-direction: column;
   margin: 0 auto;
   max-width: 700px;
-  min-width: 400px;
+  min-width: calc(var(--content-bp-1) * 0.8);
   width: 80%;
+}
+
+/* 400px = content-bp-1 */
+@media screen and (max-width: calc(400px * 0.8 + 2rem)) {
+  main {
+    margin: 0 1rem;
+    max-width: calc(400px * 0.8 - 2rem);
+    width: 100%;
+  }
 }
 
 p {
