@@ -1,0 +1,14 @@
+{
+  "name": "cailyncodes-github-io",
+  "version": "1.0.0",
+  "description": "Personal website for Cailyn Codes",
+  "private": true,
+  "scripts": {
+    "spell-check": "cspell lint '**/*.{md,html,js,css}' --no-progress",
+    "spell-check:fix": "cspell lint '**/*.{md,html,js,css}' --no-progress --show-suggestions"
+  },
+  "devDependencies": {
+    "cspell": "^8.14.2"
+  }
+}
+

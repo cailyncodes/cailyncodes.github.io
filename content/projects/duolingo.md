@@ -15,15 +15,15 @@ TBD
 
 I was the tech lead of Media Learning and architected and implemented the backend for [DuoRadio](https://blog.duolingo.com/duoradio-listening-practice/). I supported a team of 7 engineers across all platforms. We also built out the initial version of [Duolingo Adventures](https://blog.duolingo.com/adventures/) and prototyped the first scaling efforts for DuoRadio, which eventually led to a [10x increase in content](https://blog.duolingo.com/scaling-duoradio/)
 
-### Growth Infrastrucutre + Notifications
+### Growth Infrastructure + Notifications
 
 I was the engineering team lead for both of these teams. I led Growth Infrastructure (GINFRA) from July 2024 to the start of 2025 at which time we transitioned into a more product-focused team building out and maturing our Notifications system and experience.
 
-With GINFRA, we owned 27 backend services ranging from the streak, XP calculation, notifications, and rewards/acheivements. I managed a cooresponding annual budget of $2 million in cloud cost, which we repeatedly managed to reduce costs quarter over quarter.
+While I led GINFRA, we owned 27 backend services ranging from the streak, XP calculation, notifications, and rewards/achievements. I managed a corresponding annual budget of $2 million in cloud costs, which we repeatedly reduced costs quarter over quarter.
 
-On Notifications, for the first 9 months, I was a solo team lead leading 4 to 5 engineers. We shipped over 100 experiments contributing over 25% of DAUs from launched experiments in the Growth Pillar. In Septemeber, we gained our long-awaited product manager partner and dedicated data science and machine learning support.
+On Notifications, for the first 9 months, I wore both engineering and product hats, leading 4 to 5 engineers and setting strategic direction. We shipped over 100 experiments contributing over 25% of DAUs from launched experiments in the Growth Pillar. In September, we gained our long-awaited product manager partner and dedicated data science and machine learning support.
 
-My team reduced number of users getting substantially delayed notifications by 89% in the course of our first 6 months and undelievered notifications by 7M/day.
+My team reduced number of users getting substantially delayed notifications by 89% in the course of our first 6 months and undelivered notifications by 7M/day.
 
 Two of my favorite experiments we launched were:
 1. Delaying notifications that would be sent too close together. By ensuring non-urgent notifications didn't send within 30 minutes of each other, we not only improved the user experience but also substantially increased DAUs and reduced total notification volume.

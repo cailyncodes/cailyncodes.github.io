@@ -1,0 +1,44 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "thavalon",
+    "cailyn",
+    "cailyncodes",
+    "montauk",
+    "duolingo",
+    "polyamorous",
+    "genderfluid",
+    "purplenarwhal",
+    "reskin",
+    "Othering",
+    "othering",
+    "GINFRA",
+    "aquadrizzt's",
+    "Kuang",
+    "Communatarian",
+    "Rebecca"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    "*.log",
+    "package-lock.json",
+    "LICENSE.md"
+  ],
+  "ignoreRegExpList": [
+    "/https?:\\/\\/[^\\s]*/gi",
+    "/\\b[A-F0-9]{6,}\\b/gi"
+  ],
+  "dictionaries": [
+    "en",
+    "en-US",
+    "html",
+    "css",
+    "typescript",
+    "node",
+    "softwareTerms"
+  ],
+  "useGitignore": true
+}
+

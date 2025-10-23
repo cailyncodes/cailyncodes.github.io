@@ -13,7 +13,7 @@ title: Projects
 
 - [Riding MTA Start to Finish](#content/projects/mta-riding-start-finish): My top goal for my time in NYC is to ride every subway line from start to finish.
 
-- [Biking to Montauk](#content/projects/biking-montauk): In the summar of 2025, a group of us biked from NYC to Montauk over 2 days. It was my first bike tour!
+- [Biking to Montauk](#content/projects/biking-montauk): In the summer of 2025, a group of us biked from NYC to Montauk over 2 days. It was my first bike tour!
 
 ### Technical
 

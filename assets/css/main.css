@@ -230,6 +230,17 @@ pre {
   line-height: 1.4;
 }
 
+blockquote {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--border);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 img {
   max-width: 100%;
   height: auto;

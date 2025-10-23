@@ -174,6 +174,8 @@ async function loadContent() {
 
 // Store the original page content
 let originalContent = null;
+let originalContentLoaded = false;
+let originalRawHTML = null; // The raw HTML from index.html before any processing
 
 // Load layout HTML
 async function loadLayout(layoutName) {
@@ -209,19 +211,23 @@ async function handleRoute() {
   }
   
   // Check if hash starts with #content
-  if (!hash || hash === '#' || !hash.startsWith('#content')) {
-    // Restore original content (already rendered)
-    if (originalContent) {
+  if (!hash || hash === "#" || !hash.startsWith('#content')) {
+    // If we haven't loaded the original content yet, we need to load it
+    if (!originalContentLoaded) {
+      // Restore the original raw HTML from index.html
+      main.innerHTML = originalRawHTML;
+      // Load x: elements for home page
+      await loadContent();
+      // Store the rendered content
+      originalContent = main.innerHTML;
+      originalContentLoaded = true;
+    } else if (originalContent) {
+      // Restore original content (already rendered)
       main.innerHTML = originalContent;
-      document.title = 'Cailyn Hansen';
-      console.log('Restored original content');
     }
+    document.title = 'Cailyn Hansen';
+    console.log('Loaded/restored home page content');
     return;
-  }
-  
-  // Store original content before navigating away for the first time
-  if (originalContent === null) {
-    originalContent = main.innerHTML;
   }
   
   // Extract the content path (e.g., #content/about -> about)
@@ -296,8 +302,8 @@ async function initializePage() {
     return;
   }
   
-  // Always store the original HTML first (before any processing)
-  originalContent = main.innerHTML;
+  // Always store the raw HTML from index.html at the very start
+  originalRawHTML = main.innerHTML;
   
   // If there's a hash route on initial load, handle it
   if (hash && hash.startsWith('#content') && hash !== '#content') {
@@ -305,8 +311,9 @@ async function initializePage() {
   } else {
     // Load standard x: elements for home page
     await loadContent();
-    // Update stored content to include rendered x: elements
+    // Store the rendered content
     originalContent = main.innerHTML;
+    originalContentLoaded = true;
   }
 }
 

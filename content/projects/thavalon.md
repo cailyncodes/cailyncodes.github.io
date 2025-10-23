@@ -5,7 +5,7 @@ title: Thavalon
 
 ## Thavalon
 
-[Thavalon](https://github.com/aquadrizzt/THavalon) (or Tech House Avalon) was a reskin of [The Resistence: Avalon](https://boardgamegeek.com/boardgame/128882/the-resistance-avalon) by several friends of mine in college. 
+[Thavalon](https://github.com/aquadrizzt/THavalon) (or Tech House Avalon) was a reskin of [The Resistance: Avalon](https://boardgamegeek.com/boardgame/128882/the-resistance-avalon) by several friends of mine in college. 
 
 I started with aquadrizzt's implementation that we used at school and readapted it for a modern web app. With that, I built [https://next.thavalon.quest/](https://next.thavalon.quest/) to assign roles and (partially) support in-app voting.
 
