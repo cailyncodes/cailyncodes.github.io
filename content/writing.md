@@ -18,3 +18,5 @@ __cw: transphobia, suicide__
 - [Name Announcement](#content/writings/name-announcement): The essay I wrote announcing I changed my named.
 
 __cw: transphobia__
+
+- [white man angry](#content/writings/white-man-angry): A poem about making pain legible to dominance and perhaps a futility of incrementalism.
