@@ -3,22 +3,66 @@ function markdownToHtml(markdown) {
   let html = markdown;
   
   // Headers
+  html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$\n?)/gim, '<h1>$1</h1>');
-  
-  // Bold
-  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
-  
-  // Italic/Underline (markdown uses _ for italic)
-  html = html.replace(/__(.*?)__/gim, '<em>$1</em>');
-  html = html.replace(/_(.*?)_/gim, '<em>$1</em>');
-  
+
   // Links
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, (_, text, url) => {
     const hasProtocol = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url);
     const target = hasProtocol ? ' target="_blank"' : '';
     return `<a href="${url}"${target}>${text}</a>`;
+  });
+  
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+
+  // Italic
+  html = html.replace(/__(.*?)__/gim, '<em>$1</em>');
+  
+  // Unordered lists (with nesting support)
+  html = html.replace(/^[^\\]([ \t]*[\-+] .+$\n?)+/gim, (match) => {
+    const lines = match.trim().split('\n');
+    let result = '';
+    let prevIndent = 0;
+    
+    lines.forEach((line, index) => {
+      // Calculate indentation level (spaces or tabs before the marker)
+      const indentMatch = line.match(/^([ \t]*)/);
+      const indent = indentMatch ? Math.floor(indentMatch[1].length / 2) : 0;
+      
+      // Extract content after the list marker
+      const content = line.replace(/^[ \t]*[\-+] /, '').trim();
+      
+      // Handle nesting based on indent changes
+      if (indent > prevIndent) {
+        // Opening nested list
+        for (let i = 0; i < (indent - prevIndent); i++) {
+          result += '<ul>';
+        }
+      } else if (indent < prevIndent) {
+        // Closing nested lists
+        for (let i = 0; i < (prevIndent - indent); i++) {
+          result += '</li></ul>';
+        }
+        result += '</li>';
+      } else if (index > 0) {
+        // Same level, close previous item
+        result += '</li>';
+      }
+      
+      result += `<li>${content}`;
+      prevIndent = indent;
+    });
+    
+    // Close remaining open tags
+    result += '</li>';
+    for (let i = 0; i < prevIndent; i++) {
+      result += '</ul></li>';
+    }
+    
+    return `<ul>${result}</ul>`;
   });
   
   // Line breaks
@@ -29,6 +73,9 @@ function markdownToHtml(markdown) {
   if (!html.startsWith('<h') && !html.startsWith('<p')) {
     html = '<p>' + html + '</p>';
   }
+
+  // Remove escape characters
+  html = html.replace(/\\/g, '');
   
   return html;
 }

@@ -79,6 +79,11 @@ h3 {
   color: var(--accent);
 }
 
+h4 {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
 article + h1, h2, h3, h4, h5, h6 {
   margin-top: var(--space-sm);
 }
@@ -160,8 +165,7 @@ aside {
   margin-top: var(--space-lg);
 }
 
-/* Special text styling */
-strong {
+h1 + strong, h2 + strong, h3 + strong, h4 + strong, h5 + strong, h6 + strong {
   color: var(--accent);
   text-transform: uppercase;
   font-family: 'Courier New', Courier, monospace;
@@ -183,6 +187,11 @@ h1 + strong + br {
   display: none;
 }
 
+strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
 em {
   color: var(--utility);
   font-style: normal;
@@ -190,7 +199,7 @@ em {
   font-size: 0.875rem;
 }
 
-p em {
+p em, li em {
   font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -209,7 +218,7 @@ ul, ol {
 }
 
 li {
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0
 }
 
 /* Code and pre blocks */
