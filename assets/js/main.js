@@ -6,7 +6,7 @@ function getContentPath(name) {
     return '/home.md';
   }
   // Convert∂ dots to directory separators for nested paths
-  const path = name.replace(/\./g, '/');
+  let path = name.replace(/\./g, '/');
   if (path.startsWith('/')) {
     path = path.slice(1);
   }
