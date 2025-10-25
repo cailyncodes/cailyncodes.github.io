@@ -1,3 +1,21 @@
+// Process promises in completion order
+async function* allInCompletionOrder(promises) {
+  const pending = promises.map((p, i) =>
+    (async () => {
+      try { return { i, value: await p }; }
+      catch { /* swallow or rethrow below */ }
+    })()
+  );
+
+  const inFlight = new Set(pending);
+
+  while (inFlight.size) {
+    const res = await Promise.race(inFlight);
+    inFlight.delete(pending[res.i]);
+    if (res?.value !== undefined) yield res.value;
+  }
+}
+
 // Dynamically determine content path based on tag name
 // Convention: <x:something> loads content/something.md
 // For nested directories, use dots: <x:projects.project1> loads content/projects/project1.md
@@ -5,7 +23,7 @@ function getContentPath(name) {
   if (name === 'home') {
     return '/home.md';
   }
-  // Convert∂ dots to directory separators for nested paths
+  // Convert dots to directory separators for nested paths
   let path = name.replace(/\./g, '/');
   if (path.startsWith('/')) {
     path = path.slice(1);
@@ -49,7 +67,6 @@ async function processImports(markdown, visited = new Set()) {
         // Recursively process imports in the imported file
         importedContent = await processImports(importedContent, new Set(visited));
         result = result.replace(imp.fullMatch, importedContent);
-        console.log(`Imported: ${importPath}`);
       } else {
         console.warn(`Could not import: ${importPath} (status: ${response.status})`);
         result = result.replace(imp.fullMatch, `<!-- Import failed: ${imp.filename} -->`);
@@ -221,19 +238,22 @@ async function loadContent(pathname) {
       }
     }
   });
-  
-  console.log('Found x: elements:', xElements);
-  
+
+  // create an array of promises that are resolved when the inner promises are resolved
+  const tasks = xElements
+  .map(({ element, name }) =>
+    fetchAndProcessMarkdown(getContentPath(name))
+    .then(result => ({element, name, content: result}))
+  );
+
   // Load and replace each element
-  for (let { element, name } of xElements) {
+  for await (const { element, name, content } of allInCompletionOrder(tasks)) {
+    const { html } = content;
     const contentPath = getContentPath(name);
     
     try {
-      console.log(`Fetching ${contentPath}`);
-      const { html } = await fetchAndProcessMarkdown(contentPath);
-      
       // Create a wrapper div
-      const wrapper = document.createElement('div');
+      const wrapper = page.createElement('div');
       wrapper.className = `content-${name}`;
       wrapper.innerHTML = html;
       
@@ -246,7 +266,6 @@ async function loadContent(pathname) {
 
   // Then inject the content into the #content-body element
   const contentBody = page.getElementById('content-body');
-  console.log('Content body:', contentBody);
   if (contentBody) {
     contentBody.innerHTML = contentHtml;
   } else {
@@ -294,7 +313,7 @@ async function initializePage() {
   }
   
   try {
-    const {page, title} = await loadContent(pathname);
+    const { page, title } = await loadContent(pathname);
     document.title = title;
     main.replaceChildren(...page.body.children);
   } catch (error) {
