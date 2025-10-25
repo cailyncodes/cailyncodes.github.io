@@ -8,6 +8,17 @@
     content="Cailyn Hansen is a queer, trans woman exploring generative storytelling, community building and accountability, and formerly was a software engineering manager." />
   <meta name="keywords"
     content="cailyn hansen, transformative justice practitioner, queer, community accountability, generative conflict, software engineer, engineering manager" />
+  <script>
+    // Set the theme to the saved theme when the DOM is interactive
+    // This is to avoid the flash of the default theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.addEventListener('readystatechange', () => {
+      console.log(document.readyState);
+      if (document.readyState === 'interactive') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    });
+  </script>
 </head>
 
 <body>
