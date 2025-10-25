@@ -305,14 +305,13 @@ async function loadLayout(layoutName) {
 // Initialize the page
 async function initializePage() {
   const pathname = window.location.pathname;
-  const main = document.querySelector('main');
-  
-  if (!main) {
-    console.error('No main element found');
+  if (pathname === '/not-found.html') {
     return;
   }
 
-  if (pathname === '/not-found.html') {
+  const main = document.querySelector('main');
+  if (!main) {
+    console.error('No main element found');
     return;
   }
 
