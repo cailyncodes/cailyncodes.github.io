@@ -5,6 +5,8 @@ title: With Weight Removed
 
 ## With Weight Removed
 
+__Originally written Spring of 2019__
+
 The old trees sit heavy, as if they were carrying a burden one cannot talk about. I stare at them, saddened by their inescapable condition. As the car rolls by, I mull my own options for sharing what is on my mind. I focus on one of the trees as it pans through my window of view. What is the tree carrying that makes its branch droop? The Lyft pulls up, waiting for me to step out. I thank the driver and am engulfed by the dewy, cool Minnesota morning as I set my suitcase on the sidewalk. It’s 5:00am, and I am still waking up. The automatic doors swoosh to the side, their sound drowned by my sleepless yawn. I inch my way through the TSA security protocols, awaiting the inevitable. As I pass through the full-body scanner, I sigh in resignation. Beep.
 
 “Please wait right here. Would you like a private screening?” the TSA agent asks.

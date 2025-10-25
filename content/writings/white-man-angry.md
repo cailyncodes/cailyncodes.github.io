@@ -3,6 +3,8 @@ layout: writing
 title: white man angry
 ---
 
+__Originally written sometime in 2021__
+
 ## white man angry
 
 A feeling like happy sadness—
