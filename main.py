@@ -1,14 +1,22 @@
 #! /usr/bin/env python3
 
 import mimetypes
+import os
+import time
+
 from flask import Flask, send_from_directory, send_file
 
 app = Flask(__name__)
+
+mode = os.getenv("MODE")
 
 @app.route("/")
 @app.route("/<path:path>")
 def index(path=None):
     path = str(path)
+
+    if mode == "slow" and "css" not in path:
+        time.sleep(0.2)
     mimetype = mimetypes.guess_type(path)[0]
 
     if any([path.startswith(prefix) for prefix in ["layout", "assets", "content"]]):

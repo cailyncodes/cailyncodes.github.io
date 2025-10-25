@@ -312,6 +312,7 @@ async function initializePage() {
     return;
   }
   
+  document.body.children[0].style.opacity = '0';
   try {
     const { page, title } = await loadContent(pathname);
     document.title = title;
@@ -320,6 +321,7 @@ async function initializePage() {
     console.error('Error initializing page:', error);
     window.location.replace('/not-found.html');
   }
+  document.body.children[0].style.opacity = '1';
 }
 
 // Dark mode functionality
