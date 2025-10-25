@@ -7,7 +7,7 @@ title: Projects
 
 ### Independent Study
 
-\- [Occult History](#content/projects/occult-history): An 8-week self-directed study group about the history of the occult and esoteric practice.
+\- [Embracing the Occult; Rejecting the Rational](#content/projects/embracing-the-occult): An 8-week self-directed study group about the history of the occult and esoteric practice.
 
 ### Locomotion
 
