@@ -27,7 +27,7 @@ This eight-week, ten-session open gathering explores the hidden lineages of esot
 
 This session we explore the relationship between the esoteric and the rational in academic study. We also build a foundation for the esoteric as both thought and practice. We begin to explore specifics of the antagonism of capitalism with esoteric belief.
 
-[Link to notes](#content/projects/embracing-the-occult/session-1)
+[Link to notes](/projects/embracing-the-occult/session-1)
 
 **Readings:**
 

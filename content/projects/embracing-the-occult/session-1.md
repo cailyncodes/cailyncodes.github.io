@@ -5,7 +5,7 @@ title: Session 1 | Embracing the Occult
 
 ## Session 1 of Embracing the Occult; Rejecting the Rational
 
-[Main page for "Embracing the Occult; Rejecting the Rational"](#content/projects/embracing\-the\-occult)
+[Main page for "Embracing the Occult; Rejecting the Rational"](/projects/embracing-the-occult)
 
 **Notes from** Wouter Hanegraaff, __Esotericism and the Academy__ (Introduction)
 \- __Esotericism and the Academy__  is the history of the how esotericism is studied

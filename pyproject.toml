@@ -1,0 +1,8 @@
+[project]
+name = "cailyncodes-github-io"
+version = "1.0.0"
+description = "Personal website for Cailyn Hansen"
+readme = "README.md"
+dependencies = [
+    "flask>=3.1.2",
+]

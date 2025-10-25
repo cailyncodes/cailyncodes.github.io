@@ -1,92 +1,16 @@
-// Simple markdown to HTML converter
-function markdownToHtml(markdown) {
-  let html = markdown;
-  
-  // Headers
-  html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
-  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-  html = html.replace(/^# (.*$\n?)/gim, '<h1>$1</h1>');
-
-  // Links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, (_, text, url) => {
-    const hasProtocol = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url);
-    const target = hasProtocol ? ' target="_blank"' : '';
-    return `<a href="${url}"${target}>${text}</a>`;
-  });
-  
-  // Bold
-  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
-
-  // Italic
-  html = html.replace(/__(.*?)__/gim, '<em>$1</em>');
-  
-  // Unordered lists (with nesting support)
-  html = html.replace(/^[^\\]([ \t]*[\-+] .+$\n?)+/gim, (match) => {
-    const lines = match.trim().split('\n');
-    let result = '';
-    let prevIndent = 0;
-    
-    lines.forEach((line, index) => {
-      // Calculate indentation level (spaces or tabs before the marker)
-      const indentMatch = line.match(/^([ \t]*)/);
-      const indent = indentMatch ? Math.floor(indentMatch[1].length / 2) : 0;
-      
-      // Extract content after the list marker
-      const content = line.replace(/^[ \t]*[\-+] /, '').trim();
-      
-      // Handle nesting based on indent changes
-      if (indent > prevIndent) {
-        // Opening nested list
-        for (let i = 0; i < (indent - prevIndent); i++) {
-          result += '<ul>';
-        }
-      } else if (indent < prevIndent) {
-        // Closing nested lists
-        for (let i = 0; i < (prevIndent - indent); i++) {
-          result += '</li></ul>';
-        }
-        result += '</li>';
-      } else if (index > 0) {
-        // Same level, close previous item
-        result += '</li>';
-      }
-      
-      result += `<li>${content}`;
-      prevIndent = indent;
-    });
-    
-    // Close remaining open tags
-    result += '</li>';
-    for (let i = 0; i < prevIndent; i++) {
-      result += '</ul></li>';
-    }
-    
-    return `<ul>${result}</ul>`;
-  });
-  
-  // Line breaks
-  html = html.replace(/\n\n/g, '</p><p>');
-  html = html.replace(/\n/g, '<br>');
-  
-  // Wrap in paragraph if not already wrapped
-  if (!html.startsWith('<h') && !html.startsWith('<p')) {
-    html = '<p>' + html + '</p>';
-  }
-
-  // Remove escape characters
-  html = html.replace(/\\/g, '');
-  
-  return html;
-}
-
 // Dynamically determine content path based on tag name
 // Convention: <x:something> loads content/something.md
 // For nested directories, use dots: <x:projects.project1> loads content/projects/project1.md
 function getContentPath(name) {
-  // Convert dots to directory separators for nested paths
+  if (name === 'home') {
+    return '/home.md';
+  }
+  // Convert∂ dots to directory separators for nested paths
   const path = name.replace(/\./g, '/');
-  return `content/${path}.md`;
+  if (path.startsWith('/')) {
+    path = path.slice(1);
+  }
+  return `/content/${path}.md`;
 }
 
 // Process markdown imports recursively
@@ -165,11 +89,126 @@ function parseFrontMatter(markdown) {
   return { metadata, content };
 }
 
+// Simple markdown to HTML converter
+function markdownToHtml(markdown) {
+  let html = markdown;
+  
+  // Headers
+  html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+  html = html.replace(/^# (.*$\n?)/gim, '<h1>$1</h1>');
+
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, (_, text, url) => {
+    const hasProtocol = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url);
+    const target = hasProtocol ? ' target="_blank"' : '';
+    return `<a href="${url}"${target}>${text}</a>`;
+  });
+  
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+
+  // Italic
+  html = html.replace(/__(.*?)__/gim, '<em>$1</em>');
+  
+  // Unordered lists (with nesting support)
+  html = html.replace(/^[^\\]([ \t]*[\-+] .+$\n?)+/gim, (match) => {
+    const lines = match.trim().split('\n');
+    let result = '';
+    let prevIndent = 0;
+    
+    lines.forEach((line, index) => {
+      // Calculate indentation level (spaces or tabs before the marker)
+      const indentMatch = line.match(/^([ \t]*)/);
+      const indent = indentMatch ? Math.floor(indentMatch[1].length / 2) : 0;
+      
+      // Extract content after the list marker
+      const content = line.replace(/^[ \t]*[\-+] /, '').trim();
+      
+      // Handle nesting based on indent changes
+      if (indent > prevIndent) {
+        // Opening nested list
+        for (let i = 0; i < (indent - prevIndent); i++) {
+          result += '<ul>';
+        }
+      } else if (indent < prevIndent) {
+        // Closing nested lists
+        for (let i = 0; i < (prevIndent - indent); i++) {
+          result += '</li></ul>';
+        }
+        result += '</li>';
+      } else if (index > 0) {
+        // Same level, close previous item
+        result += '</li>';
+      }
+      
+      result += `<li>${content}`;
+      prevIndent = indent;
+    });
+    
+    // Close remaining open tags
+    result += '</li>';
+    for (let i = 0; i < prevIndent; i++) {
+      result += '</ul></li>';
+    }
+    
+    return `<ul>${result}</ul>`;
+  });
+  
+  // Remove trailing newline
+  if (html.endsWith('\n')) {
+    html = html.slice(0, -1);
+  }
+  // Line breaks
+  html = html.replace(/\n\n/g, '</p><p>');
+  html = html.replace(/\n/g, '<br>');
+
+  // Wrap in paragraph if not already wrapped
+  if (!html.startsWith('<h') && !html.startsWith('<p')) {
+    html = '<p>' + html + '</p>';
+  }
+
+  // Remove escape characters
+  html = html.replace(/\\/g, '');
+  
+  return html;
+}
+
+// Shared function to fetch and process markdown files
+async function fetchAndProcessMarkdown(path) {
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`Could not load: ${path} (status: ${response.status})`);
+  }
+  
+  let markdown = await response.text();
+  markdown = await processImports(markdown);
+  const { metadata, content } = parseFrontMatter(markdown);
+  const html = markdownToHtml(content);
+  
+  return { metadata, html };
+}
+
 // Load and insert markdown content
-async function loadContent() {
+async function loadContent(pathname) {
+  if (pathname === '' || pathname === '/') {
+    pathname = 'home';
+  }
+
+  // Fetch initial content and layout
+  const contentPath = getContentPath(pathname);
+  const { metadata, html: contentHtml } = await fetchAndProcessMarkdown(contentPath);
+
+  // Fetch layout and parse it into a DOM object
+  const layoutName = metadata.layout || 'default';
+  const layoutHtml = await loadLayout(layoutName);
+
+  const page = new DOMParser().parseFromString(layoutHtml, 'text/html');
+
   // Find all elements in the DOM that match x:* pattern
   // Browsers create actual DOM elements for these, even if they're unknown tags
-  const allElements = document.querySelectorAll('*');
+  const allElements = page.querySelectorAll('*');
   const xElements = [];
   
   // Find elements whose tag name contains 'X:' (browsers may capitalize it)
@@ -190,43 +229,39 @@ async function loadContent() {
     const contentPath = getContentPath(name);
     
     try {
-      const response = await fetch(contentPath);
-      console.log(`Fetching ${contentPath}:`, response);
+      console.log(`Fetching ${contentPath}`);
+      const { html } = await fetchAndProcessMarkdown(contentPath);
       
-      if (response.ok) {
-        let markdown = await response.text();
-        // Process any imports in the markdown
-        markdown = await processImports(markdown);
-        
-        // Parse front matter and use only content
-        const { content } = parseFrontMatter(markdown);
-        const html = markdownToHtml(content);
-        
-        // Create a wrapper div
-        const wrapper = document.createElement('div');
-        wrapper.className = `content-${name}`;
-        wrapper.innerHTML = html;
-        
-        // Replace the custom element with the wrapper
-        element.parentNode.replaceChild(wrapper, element);
-        console.log(`Replaced ${name} with content`);
-      } else {
-        console.warn(`Could not load content: ${contentPath} (status: ${response.status})`);
-      }
+      // Create a wrapper div
+      const wrapper = document.createElement('div');
+      wrapper.className = `content-${name}`;
+      wrapper.innerHTML = html;
+      
+      // Replace the custom element with the wrapper
+      element.parentNode.replaceChild(wrapper, element);
     } catch (error) {
       console.error(`Error loading ${contentPath}:`, error);
     }
   }
-}
 
-// Store the original page content
-let originalContent = null;
-let originalContentLoaded = false;
-let originalRawHTML = null; // The raw HTML from index.html before any processing
+  // Then inject the content into the #content-body element
+  const contentBody = page.getElementById('content-body');
+  console.log('Content body:', contentBody);
+  if (contentBody) {
+    contentBody.innerHTML = contentHtml;
+  } else {
+    // Intended for home page layout
+    console.log('No #content-body element found in layout');
+  }
+  
+  const title = metadata.title ? `${metadata.title} - Cailyn Hansen` : 'Cailyn Hansen';
+
+  return {page, title};
+}
 
 // Load layout HTML
 async function loadLayout(layoutName) {
-  const layoutPath = `layout/${layoutName}.html`;
+  const layoutPath = `/layout/${layoutName}.html`;
   
   try {
     const response = await fetch(layoutPath);
@@ -235,10 +270,11 @@ async function loadLayout(layoutName) {
       return await response.text();
     } else {
       console.warn(`Could not load layout: ${layoutPath}, using default`);
-      // Fallback to default layout
+      // Fallback to trying the default layout
       if (layoutName !== 'default') {
         return await loadLayout('default');
       }
+      // Fallback to empty layout
       return '<div id="content-body"></div>';
     }
   } catch (error) {
@@ -247,101 +283,9 @@ async function loadLayout(layoutName) {
   }
 }
 
-// Handle hash routing
-async function handleRoute() {
-  const hash = window.location.hash;
-  const main = document.querySelector('main');
-  
-  if (!main) {
-    console.error('No main element found');
-    return;
-  }
-  
-  // Check if hash starts with #content
-  if (!hash || hash === "#" || !hash.startsWith('#content')) {
-    // If we haven't loaded the original content yet, we need to load it
-    if (!originalContentLoaded) {
-      // Restore the original raw HTML from index.html
-      main.innerHTML = originalRawHTML;
-      // Load x: elements for home page
-      await loadContent();
-      // Store the rendered content
-      originalContent = main.innerHTML;
-      originalContentLoaded = true;
-    } else if (originalContent) {
-      // Restore original content (already rendered)
-      main.innerHTML = originalContent;
-    }
-    document.title = 'Cailyn Hansen';
-    console.log('Loaded/restored home page content');
-    return;
-  }
-  
-  // Extract the content path (e.g., #content/about -> about)
-  const contentPath = hash.substring(9); // Remove '#content/'
-  
-  if (!contentPath) {
-    console.warn('No content path specified');
-    return;
-  }
-  
-  // Convert path to markdown file path
-  const mdPath = `content/${contentPath}.md`;
-  
-  try {
-    const response = await fetch(mdPath);
-    if (!response.ok) {
-      console.error(`Could not load content: ${mdPath} (status: ${response.status})`);
-      return;
-    }
-    
-    let markdown = await response.text();
-    
-    // Process any imports
-    markdown = await processImports(markdown);
-    
-    // Parse front matter
-    const { metadata, content } = parseFrontMatter(markdown);
-    
-    // Get layout (default to 'default' if not specified)
-    const layoutName = metadata.layout || 'default';
-    const layoutHtml = await loadLayout(layoutName);
-    
-    // Convert markdown to HTML
-    const contentHtml = markdownToHtml(content);
-    
-    // Replace the main element content with the layout
-    main.innerHTML = layoutHtml;
-    
-    // Load any x: elements in the layout first
-    await loadContent();
-    
-    // Then inject the content into the #content-body element
-    const contentBody = document.getElementById('content-body');
-    if (contentBody) {
-      contentBody.innerHTML = contentHtml;
-    } else {
-      console.warn('No #content-body element found in layout');
-      main.innerHTML = contentHtml;
-    }
-    
-    // Update page title if specified
-    if (metadata.title) {
-      document.title = `${metadata.title} - Cailyn Hansen`;
-    }
-    
-    console.log(`Loaded content: ${mdPath} with layout: ${layoutName}`);
-  } catch (error) {
-    console.error(`Error loading content ${mdPath}:`, error);
-  }
-}
-
-// Listen for hash changes
-window.addEventListener('hashchange', handleRoute);
-
 // Initialize the page
 async function initializePage() {
-  const hash = window.location.hash;
+  const pathname = window.location.pathname;
   const main = document.querySelector('main');
   
   if (!main) {
@@ -349,18 +293,13 @@ async function initializePage() {
     return;
   }
   
-  // Always store the raw HTML from index.html at the very start
-  originalRawHTML = main.innerHTML;
-  
-  // If there's a hash route on initial load, handle it
-  if (hash && hash.startsWith('#content') && hash !== '#content') {
-    await handleRoute();
-  } else {
-    // Load standard x: elements for home page
-    await loadContent();
-    // Store the rendered content
-    originalContent = main.innerHTML;
-    originalContentLoaded = true;
+  try {
+    const {page, title} = await loadContent(pathname);
+    document.title = title;
+    main.replaceChildren(...page.body.children);
+  } catch (error) {
+    console.error('Error initializing page:', error);
+    window.location.replace('/not-found.html');
   }
 }
 
@@ -409,4 +348,3 @@ if (document.readyState === 'loading') {
   initializeDarkMode();
   initializePage();
 }
-
