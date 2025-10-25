@@ -311,7 +311,11 @@ async function initializePage() {
     console.error('No main element found');
     return;
   }
-  
+
+  if (pathname === '/not-found.html') {
+    return;
+  }
+
   document.body.children[0].style.opacity = '0';
   try {
     const { page, title } = await loadContent(pathname);
@@ -319,9 +323,7 @@ async function initializePage() {
     main.replaceChildren(...page.body.children);
   } catch (error) {
     console.error('Error initializing page:', error);
-    if (window.location.pathname !== '/not-found.html') {
     window.location.replace('/not-found.html');
-    }
   }
   document.body.children[0].style.opacity = '1';
 }
