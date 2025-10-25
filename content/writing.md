@@ -11,7 +11,7 @@ I include a selection of my writings over the years. It's a combination of perso
 
 __cw: mentions of sexual violence__
 
-\- [With Weight Removed]("#content/writings/with-weight-removed"): An essay on exploring the urge to share about oneself, to use emotions as provocation, and the function of social media thereof
+\- [With Weight Removed](#content/writings/with-weight-removed): An essay on exploring the urge to share about oneself, to use emotions as provocation, and the function of social media thereof
 
 __cw: transphobia, suicide__
 
