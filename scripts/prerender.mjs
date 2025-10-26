@@ -62,6 +62,11 @@ try {
       await page.goto(url, { waitUntil: "networkidle0" });
       await page.waitForFunction('window.__PRERENDER_READY__ === true', { timeout: 10000 });
 
+      // Add a data attribute to mark which path this was prerendered for
+      await page.evaluate((path) => {
+        document.documentElement.setAttribute('data-prerendered-path', path);
+      }, urlPath);
+
       const html = await page.content();
       prerenderedPaths.add(urlPath);
 

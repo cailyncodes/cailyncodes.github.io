@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "parcel build index.html --dist-dir dist && node scripts/prerender.mjs",
+    "build:serve": "npm run clean && npm run build && npm run serve",
     "clean": "rm -rf dist",
     "spell-check": "cspell lint '**/*.{md,html,js,css}' --no-progress",
     "spell-check:fix": "cspell lint '**/*.{md,html,js,css}' --no-progress --show-suggestions",

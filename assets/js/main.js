@@ -305,9 +305,6 @@ async function loadLayout(layoutName) {
 // Initialize the page
 async function initializePage() {
   const pathname = window.location.pathname;
-  if (pathname === '/not-found.html') {
-    return;
-  }
 
   const main = document.querySelector('main');
   if (!main) {
@@ -316,23 +313,35 @@ async function initializePage() {
   }
 
   // Check if the page was already prerendered (has content)
-  const isPrerendered = main.children.length > 0;
+  const hasContent = main.children.length > 0;
   
-  if (isPrerendered) {
-    console.log('Page already prerendered, skipping client-side rendering');
+  // Check if the prerendered content matches the current path
+  const prerenderedPath = document.documentElement.getAttribute('data-prerendered-path');
+  const currentPath = pathname === '/' || pathname === '' ? '/' : pathname;
+  const isCorrectPrerender = hasContent && prerenderedPath === currentPath;
+  
+  if (isCorrectPrerender) {
+    console.log('Page already prerendered for this path, skipping client-side rendering');
     window.__PRERENDER_READY__ = true;
     return;
   }
 
-  // Client-side rendering for non-prerendered pages
-  document.body.children[0].style.opacity = '0';
+  // Client-side rendering for non-prerendered pages or wrong prerendered content
+  if (hasContent && !isCorrectPrerender) {
+    console.log(`Prerendered content is for '${prerenderedPath}' but current path is '${currentPath}', re-rendering`);
+  }
+
+  main.replaceChildren();
+  main.style.opacity = '0';
+
   try {
+    console.log('Loading content for path:', pathname);
     const { page, title } = await loadContent(pathname);
     document.title = title;
     main.replaceChildren(...page.body.children);
   } catch (error) {
     console.error('Error initializing page:', error);
-    window.location.replace('/not-found.html');
+    window.location.replace('/not-found');
   }
   document.body.children[0].style.opacity = '1';
   window.__PRERENDER_READY__ = true;
