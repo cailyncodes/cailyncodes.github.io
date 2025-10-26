@@ -217,7 +217,7 @@ async function loadContent(pathname) {
   const contentPath = getContentPath(pathname);
   const { metadata, html: contentHtml } = await fetchAndProcessMarkdown(contentPath);
 
-  if (!metadata.layout) {
+  if (!metadata || !metadata.layout) {
     window.location.replace('/not-found');
     return;
   }
@@ -342,8 +342,12 @@ async function initializePage() {
   try {
     console.log('Loading content for path:', pathname);
     const { page, title } = await loadContent(pathname);
-    document.title = title;
-    main.replaceChildren(...page.body.children);
+    // if the page and title are not found, that means we
+    // redirected to the not-found page, so just noop here
+    if (page && title) { 
+      document.title = title;
+      main.replaceChildren(...page.body.children);
+    }
   } catch (error) {
     console.error('Error initializing page:', error);
     window.location.replace('/not-found');
