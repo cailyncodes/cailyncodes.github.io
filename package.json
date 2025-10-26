@@ -42,6 +42,9 @@
     },
     {
       "staticPath": "favicon.ico"
+    },
+    {
+      "staticPath": "robots.txt"
     }
   ]
 }
