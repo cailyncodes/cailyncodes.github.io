@@ -217,8 +217,13 @@ async function loadContent(pathname) {
   const contentPath = getContentPath(pathname);
   const { metadata, html: contentHtml } = await fetchAndProcessMarkdown(contentPath);
 
+  if (!metadata.layout) {
+    window.location.replace('/not-found');
+    return;
+  }
+
   // Fetch layout and parse it into a DOM object
-  const layoutName = metadata.layout || 'default';
+  const layoutName = metadata.layout;
   const layoutHtml = await loadLayout(layoutName);
 
   const page = new DOMParser().parseFromString(layoutHtml, 'text/html');
