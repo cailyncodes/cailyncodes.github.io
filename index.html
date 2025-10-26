@@ -13,7 +13,6 @@
     // This is to avoid the flash of the default theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.addEventListener('readystatechange', () => {
-      console.log(document.readyState);
       if (document.readyState === 'interactive') {
         document.documentElement.setAttribute('data-theme', savedTheme);
       }
@@ -22,14 +21,10 @@
 </head>
 
 <body>
-  <main style="opacity: 0;">
-    <noscript>
-      This page requires JavaScript to work. Please enable JavaScript in your browser to view the content. I'll add that
-      this is very light weight and uses no frameworks (except for Cloudflare Web Analytics). Just vanilla JS: I use it
-      to process Markdown files into HTML. So if you really don't want to use JS, you can download the Markdown files by
-      viewing them on <a href="https://github.com/cailyncodes/cailyncodes.github.io" target="_blank">Github</a>.
-    </noscript>
-  </main>
+  <main style="opacity: 0;"></main>
+  <noscript>
+    This page requires JavaScript to work. Please enable JavaScript in your browser to view the content. I'll add that this is very light weight and uses no frameworks (except for Cloudflare Web Analytics). Just vanilla JS: I use it to process Markdown files into HTML. So if you really don't want to use JS, you can download the Markdown files by viewing them on <a href="https://github.com/cailyncodes/cailyncodes.github.io" target="_blank">Github</a>.
+  </noscript>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
     <span id="theme-toggle-text">Dark</span>
   </button>

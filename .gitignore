@@ -11,3 +11,8 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
+# Dist directory
+dist/
+
+# Parcel cache
+.parcel-cache/

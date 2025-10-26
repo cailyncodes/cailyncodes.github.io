@@ -4,11 +4,43 @@
   "description": "Personal website for Cailyn Codes",
   "private": true,
   "scripts": {
+    "build": "parcel build index.html --dist-dir dist && node scripts/prerender.mjs",
+    "clean": "rm -rf dist",
     "spell-check": "cspell lint '**/*.{md,html,js,css}' --no-progress",
-    "spell-check:fix": "cspell lint '**/*.{md,html,js,css}' --no-progress --show-suggestions"
+    "spell-check:fix": "cspell lint '**/*.{md,html,js,css}' --no-progress --show-suggestions",
+    "serve": "cd dist && ../main.py",
+    "start": "./main.py",
+    "start:slow": "MODE=slow ./main.py"
   },
   "devDependencies": {
-    "cspell": "^8.14.2"
-  }
+    "cspell": "^8.14.2",
+    "glob": "^11.0.0",
+    "parcel": "^2.16.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "puppeteer": "^24.26.1",
+    "serve-handler": "^6.1.6"
+  },
+  "staticFiles": [
+    {
+      "staticPath": "assets",
+      "staticOutPath": "assets"
+    },
+    {
+      "staticPath": "content",
+      "staticOutPath": "content"
+    },
+    {
+      "staticPath": "layout",
+      "staticOutPath": "layout"
+    },
+    {
+      "staticPath": "home.md"
+    },
+    {
+      "staticPath": "not-found.html"
+    },
+    {
+      "staticPath": "favicon.ico"
+    }
+  ]
 }
-

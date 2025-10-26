@@ -315,6 +315,16 @@ async function initializePage() {
     return;
   }
 
+  // Check if the page was already prerendered (has content)
+  const isPrerendered = main.children.length > 0;
+  
+  if (isPrerendered) {
+    console.log('Page already prerendered, skipping client-side rendering');
+    window.__PRERENDER_READY__ = true;
+    return;
+  }
+
+  // Client-side rendering for non-prerendered pages
   document.body.children[0].style.opacity = '0';
   try {
     const { page, title } = await loadContent(pathname);
@@ -325,6 +335,7 @@ async function initializePage() {
     window.location.replace('/not-found.html');
   }
   document.body.children[0].style.opacity = '1';
+  window.__PRERENDER_READY__ = true;
 }
 
 // Dark mode functionality
@@ -349,7 +360,9 @@ function initializeDarkMode() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
+    document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
     document.documentElement.setAttribute('data-theme', newTheme);
+    
     localStorage.setItem('theme', newTheme);
     updateToggleText(newTheme, themeToggleText);
     
