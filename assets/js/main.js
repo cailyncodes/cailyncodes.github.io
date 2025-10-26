@@ -318,7 +318,7 @@ async function initializePage() {
   // Check if the prerendered content matches the current path
   const prerenderedPath = document.documentElement.getAttribute('data-prerendered-path');
   const currentPath = pathname === '/' || pathname === '' ? '/' : pathname;
-  const isCorrectPrerender = hasContent && prerenderedPath === currentPath;
+  const isCorrectPrerender = hasContent && (prerenderedPath === currentPath || `${prerenderedPath}/` === currentPath);
   
   if (isCorrectPrerender) {
     console.log('Page already prerendered for this path, skipping client-side rendering');
