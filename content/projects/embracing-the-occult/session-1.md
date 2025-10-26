@@ -16,6 +16,12 @@ title: Session 1 | Embracing the Occult
 \- How we think about esotericism and the occult is entwined (in rejection of) with how we think about ourselves
 \- If our understanding of esotericism and the occult is wrong, then there is a question about whether what we think is true about us is wrong
 
+**Notes from** Helmut Zander, "What Is Esotericism? Does It Exist?
+How Can It Be Understood?"
+\- __Forth coming__
+\- Graph of usage of words over time:
+\- <img src="/assets/images/graph-occult-esoteric-hermetic.png" width="350px" height="250px" />
+
 **Notes from** Silvia Federici, __Caliban and the Witch__ (Introduction)
 \- Text is a study of the genesis of capitalism through a feminist perspective
 \- It locates both women and anti-colonial rebel as symbol of world proletariat and the body thereof as terrain of resistance to logic of capitalism

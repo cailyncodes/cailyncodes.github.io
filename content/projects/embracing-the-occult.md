@@ -25,7 +25,7 @@ This eight-week, ten-session open gathering explores the hidden lineages of esot
 
 #### Session 1: Why (and how to) study esotericism?
 
-This session we explore the relationship between the esoteric and the rational in academic study. We also build a foundation for the esoteric as both thought and practice. We begin to explore specifics of the antagonism of capitalism with esoteric belief.
+This session we build methodologically what we (could) mean by esotercism in academic study. We also build a foundation for the esoteric as both thought and practice. We begin to explore specifics of the antagonism of capitalism with esoteric belief to motivate further study.
 
 [Link to notes](/projects/embracing-the-occult/session-1)
 
@@ -34,41 +34,41 @@ This session we explore the relationship between the esoteric and the rational i
 - Wouter Hanegraaff, __Esotericism and the Academy__ (Introduction)
     - On loan at NYPL
     - Unfortunately, no public link available
-- Helmut Zander, "What Is Esotericism? Does It Exist? How Can It Be Understood?"
-    - Link in course materials
-    - [Public link](https://pdfs.semanticscholar.org/1895/81fff813244866c1246ec2fb2b10dad3ca78.pdf)
 - Antoine Faivre, __Access to Western Esotericism__ (Part 1)
     - Link in course materials
     - Unfortunately, no public link available
-- Wouter J. Hanegraaff, "How Magic Survived the Disenchantment of the World"
+- Helmut Zander, "What Is Esotericism? Does It Exist? How Can It Be Understood?"
     - Link in course materials
-    - [Public link](https://dn721601.ca.archive.org/0/items/how-magic-survived-the-disenchantment-of/How_magic_survived_the_disenchantment_of.pdf)
-- Silvia Federici, __Caliban and the Witch__ (Introduction + The Great Caliban)
+    - [Public link](https://pdfs.semanticscholar.org/1895/81fff813244866c1246ec2fb2b10dad3ca78.pdf)
+- Alex Owen, __The Place of Enchantment__ (Introduction)
+    - [Public link](https://www.howardnema.com/wp-content/uploads/2020/12/9780226642048.UChicago-Press.Place-of-Enchantment_-British-Occultism-and-the-Culture-of-the-Modern-The.Alex-Owen.Dec2006.pdf)
+- Silvia Federici, __Caliban and the Witch__ (Introduction)
     - Link in course materials
     - [Public link](https://theanarchistlibrary.org/library/silvia-federici-caliban-and-the-witch)
 - Recommended: The Hermetic Library’s "What Is Esotericism?" reader
     - Link in course materials
     - [Public link](https://hermetic.com/gdlibrary/the-nature-structure-and-role-of-the-soul/what-is-western-esotericism)
 
-#### Session 2: What is the Occult?
+#### Session 2: What are the Occult and Cosmologies of the Hidden?
 
-We place Western occultism in dialogue with Islamic and Sufi cosmologies to unlearn colonial hierarchies of mysticism.
+We explore multiple traditions of hidden, mystical, or relational knowing to expose how the very idea of “the occult” is culturally bounded and colonial in origin. Specificially, we place Western occultism in dialogue with Islamic and Sufi cosmologies to unlearn colonial hierarchies of mysticism.
 
 **Readings:**
 
-- Aleister Crowley, __Magick in Theory and Practice__ (Book I selections)
-    - Link in course materials
-- Helena Blavatsky, __The Key to Theosophy__ (ch. 1–2)
-    - Link in course materials
-- Erik Davis, __TechGnosis: Myth, Magic, and Mysticism in the Age of Information__ (Introduction + ch. 3 "The Magic of the Technological")
-    - Link in course materials
-- Abdennour Bidar, __Self Islam__ (2006, trans. 2018)
-    - Islamic mystical humanism responding to Enlightenment secularism.
+- Joy Dixon, __Divine Feminine: Theosophy and Feminism in England__
 - Fatemeh Keshavarz, __Jasmine and Stars: Reading More Than Lolita in Tehran__ (2007, introduction + ch. 2 on Rumi)
     - Situates Sufi poetics as living epistemology.
 - Amira el-Zein, __Islam, Arabs, and Intelligent World of the Jinn__ (2009, ch. 1–3)
     - Reframes "occult" cosmology through Islamic thought.
+- Abdennour Bidar, __Self Islam__ (2006, trans. 2018)
+    - Islamic mystical humanism responding to Enlightenment secularism.
+- Aleister Crowley, __Magick in Theory and Practice__ (excerpts)
+    - Link in course materials
+- Helena Blavatsky, __The Key to Theosophy__ (excerpts)
+    - Link in course materials
 - Optional: __The Occult Experience__ (documentary, 1985)
+- Optional: Erik Davis, __TechGnosis: Myth, Magic, and Mysticism in the Age of Information__ (Introduction + ch. 3 "The Magic of the Technological")
+    - Link in course materials
 
 #### Session 3: Isn’t it all pseudoscience?
 
@@ -76,6 +76,9 @@ Explore and understand epistemic violence.
 
 **Readings:**
 
+- Wouter J. Hanegraaff, "How Magic Survived the Disenchantment of the World"
+    - Link in course materials
+    - [Public link](https://dn721601.ca.archive.org/0/items/how-magic-survived-the-disenchantment-of/How_magic_survived_the_disenchantment_of.pdf)
 - Paul Feyerabend, __Against Method__ (Introduction + ch. 18 "Realism and Instrumentalism")
     - Link in course materials
 - Bruno Latour, __We Have Never Been Modern__ (Introduction)
@@ -83,6 +86,8 @@ Explore and understand epistemic violence.
 - Donna Haraway, "Situated Knowledges: The Science Question in Feminism and the Privilege of Partial Perspective"
     - Link in course materials
 - Boaventura de Sousa Santos, "Epistemologies of the South"
+    - Link in course materials
+- Silvia Federici, __Caliban and the Witch. Women, The Body, and Primitive Accumulation__ ("The Great Caliban: The Struggle Against the Rebel Body")
     - Link in course materials
 - Optional: James Webb, __The Occult Underground__ (on rationality and its shadow)
 
@@ -104,6 +109,7 @@ Ritual as archive; tradition as knowledge practice.
     - Not explicitly "occult," but argues for the spiritual stakes of language, ritual, and oral cosmology.
 - Robin Wall Kimmerer, __Braiding Sweetgrass__ (sections "Skywoman Falling" & "Asters and Goldenrod")
     - Indigenous ritual ecology and relational epistemology.
+- Catherine Bell, __Ritual: Perspectives and Dimensions__ (ch. 1–2)
 - Optional: __The Wicker Man__ (movie, 1973)
 
 #### Session 5: Practicum
@@ -147,6 +153,7 @@ These sessions are laboratories of unlearning — we engage embodied, creative, 
     - Link in course materials
 - Marina Warner, __Phantasmagoria__ (ch. 2 "Spectral Evidence")
     - Link in course materials
+- Hanegraaff, __Esotericism and the Academy__ (ch. 3 “Enlightenment and Exile”)
 - Optional: __Esoterica__ episode "The Enlightenment’s Occult Shadow" (podcast)
 
 #### Session 8: Fascism and the Occult: What’s the connection?
@@ -157,8 +164,7 @@ We will examine how occultism was both weaponized by fascism and reclaimed by fe
 
 - Nicholas Goodrick-Clarke, __The Occult Roots of Nazism__ (Introduction + ch. 2)
     - Link in course materials
-- Silvia Federici, "The Great Caliban: The Struggle Against the Rebel Body"
-    - Link in course materials
+- Peter Staudenmaier, __Between Occultism and Fascism__
 - Jason Josephson-Storm, __The Myth of Disenchantment__ (ch. 8 "Occultism, Modernity, and Power")
     - Link in course materials
 - Peter Lamborn Wilson (Hakim Bey), __Sacred Drift: Essays on the Margins of Islam__ (1993)
