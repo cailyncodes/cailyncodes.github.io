@@ -32,7 +32,7 @@ This session we build methodologically what we (could) mean by esotercism in aca
 **Readings:**
 
 - Wouter Hanegraaff, __Esotericism and the Academy__ (Introduction)
-    - On loan at NYPL
+    - Available at NYPL
     - Unfortunately, no public link available
 - Antoine Faivre, __Access to Western Esotericism__ (Part 1)
     - Link in course materials
@@ -55,17 +55,22 @@ We explore multiple traditions of hidden, mystical, or relational knowing to exp
 
 **Readings:**
 
-- Joy Dixon, __Divine Feminine: Theosophy and Feminism in England__
-- Fatemeh Keshavarz, __Jasmine and Stars: Reading More Than Lolita in Tehran__ (2007, introduction + ch. 2 on Rumi)
+- Joy Dixon, __Divine Feminine: Theosophy and Feminism in England__ (Introduction)
+    - [Public link](https://books.google.com/books?id=CRsAEAAAQBAJ&printsec=frontcover#v=onepage&q&f=false)
+- Fatemeh Keshavarz, __Jasmine and Stars: Reading More Than Lolita in Tehran__ (Introduction + Chapter 2)
     - Situates Sufi poetics as living epistemology.
-- Amira el-Zein, __Islam, Arabs, and Intelligent World of the Jinn__ (2009, ch. 1–3)
+    - [Public link](https://archive.org/details/isbn_9780807831090/page/n9/mode/2up)
+- Amira el-Zein, __Islam, Arabs, and Intelligent World of the Jinn__ (Chapters 1 thru 3)
     - Reframes "occult" cosmology through Islamic thought.
-- Abdennour Bidar, __Self Islam__ (2006, trans. 2018)
-    - Islamic mystical humanism responding to Enlightenment secularism.
-- Aleister Crowley, __Magick in Theory and Practice__ (excerpts)
-    - Link in course materials
+    - [Public link](https://z-library.sk/book/6036787/6295ed/islam-arabs-and-the-intelligent-world-of-the-jinn.html?dsource=recommend)
+- Aleister Crowley, __Magick in Theory and Practice__ (Chapter 0)
+    - [Public link](https://archive.org/details/b29825064/page/n33/mode/2up)
 - Helena Blavatsky, __The Key to Theosophy__ (excerpts)
-    - Link in course materials
+    - [Public link](https://www.blavatskyarchives.com/theosophypdfs/blavatsky_the_key_to_theosophy_1889.pdf)
+    - Section 1
+    - Section 2 (The difference between..., both)
+    - Section 6 (The distinction...)
+    - Section 8 (What is memory...)
 - Optional: __The Occult Experience__ (documentary, 1985)
 - Optional: Erik Davis, __TechGnosis: Myth, Magic, and Mysticism in the Age of Information__ (Introduction + ch. 3 "The Magic of the Technological")
     - Link in course materials
