@@ -1,22 +1,43 @@
-<x:Header></x:Header>
-<article>
-    <x:About />
-</article>
-<article>
-    <x:Projects />
-</article>
-<article>
-    <x:Reading />
-</article>
-<article>
-    <x:Writing />
-</article>
-<aside>
-    <article>
-        <x:Contact />
-    </article>
+<header class="home-hero">
+  <x:home-intro></x:home-intro>
+</header>
+
+<nav class="home-nav" aria-label="Main sections">
+  <div class="nav-grid">
+    <a href="/about" class="nav-card">
+      <div class="nav-card-content">
+        <x:home-about></x:home-about>
+      </div>
+    </a>
+
+    <a href="/projects" class="nav-card">
+      <div class="nav-card-content">
+        <x:home-projects></x:home-projects>
+      </div>
+    </a>
+
+    <a href="/writing" class="nav-card">
+      <div class="nav-card-content">
+        <x:home-writing></x:home-writing>
+      </div>
+    </a>
+
+    <a href="/reading" class="nav-card">
+      <div class="nav-card-content">
+        <x:home-reading></x:home-reading>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<hr class="home-footer-divider"/>
+
+<aside class="home-contact">
+  <x:Contact></x:Contact>
 </aside>
-<hr style="margin: 0; "/>
-<aside style="text-align: center; margin-top: 0;">
-    <p style="width: fit-content; margin: 0 auto;">Thank you for reading a personal website. All these posts were written in a specific time and place. I reserve the right to learn new things and to change my mind. If you enjoyed any of this content, please consider sharing it however you like to share content.</p>
+
+<hr class="home-footer-divider"/>
+
+<aside class="home-footer">
+  <p>Thank you for reading a personal website. All these posts were written in a specific time and place. I reserve the right to learn new things and to change my mind. If you enjoyed any of this content, please consider sharing it however you like to share content.</p>
 </aside>

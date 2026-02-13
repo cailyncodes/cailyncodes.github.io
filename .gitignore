@@ -16,3 +16,6 @@ dist/
 
 # Parcel cache
 .parcel-cache/
+
+# Build output
+*.egg-info

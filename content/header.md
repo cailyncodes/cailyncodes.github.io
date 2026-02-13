@@ -5,4 +5,4 @@ title: Cailyn Hansen
 
 # Cailyn Hansen
 **be bold, take risks, make change**
-__Updated: Oct. 25, 2025__
+__Updated: Feb. 11, 2026__

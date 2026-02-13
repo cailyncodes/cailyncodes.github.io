@@ -5,6 +5,10 @@ title: Contact
 
 ## Contact
 
-Get in touch at "contact" [at] "this website". I'm also online at various places under my name or @purplenarwhal. 
+Get in touch via email ("contact" [at] this domain, sans www). I'm also online at various places under my name or @cailyncodes.
 
-Very happy to chat about any of the projects on here or related ideas.
+- [LinkedIn](https://linkedin.com/in/cailynhansen)
+- [GitHub](https://github.com/cailyncodes)
+
+
+Very happy to chat about any of the posts here or related ideas.

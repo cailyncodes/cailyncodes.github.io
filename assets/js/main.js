@@ -33,12 +33,13 @@ function getContentPath(name) {
 
 // Process markdown imports recursively
 // Syntax: @import(filename) where filename uses dot notation for nested paths
+// Syntax: @import(filename#field) to extract specific front matter field
 async function processImports(markdown, visited = new Set()) {
-  // Find all import statements: @import(filename)
+  // Find all import statements: @import(filename) or @import(filename#field)
   const importRegex = /@import\(([^)]+)\)/g;
   let match;
   let result = markdown;
-  
+
   const imports = [];
   while ((match = importRegex.exec(markdown)) !== null) {
     imports.push({
@@ -46,27 +47,44 @@ async function processImports(markdown, visited = new Set()) {
       filename: match[1].trim()
     });
   }
-  
+
   // Process each import
   for (const imp of imports) {
-    const importPath = getContentPath(imp.filename);
-    
+    // Check if field extraction is requested (syntax: filename#field)
+    const hashIndex = imp.filename.indexOf('#');
+    const fieldName = hashIndex > 0 ? imp.filename.slice(hashIndex + 1) : null;
+    const filePath = hashIndex > 0 ? imp.filename.slice(0, hashIndex) : imp.filename;
+
+    const importPath = getContentPath(filePath);
+
     // Prevent circular dependencies
     if (visited.has(importPath)) {
       console.warn(`Circular import detected: ${importPath}`);
       result = result.replace(imp.fullMatch, `<!-- Circular import: ${imp.filename} -->`);
       continue;
     }
-    
+
     visited.add(importPath);
-    
+
     try {
       const response = await fetch(importPath);
       if (response.ok) {
         let importedContent = await response.text();
-        // Recursively process imports in the imported file
-        importedContent = await processImports(importedContent, new Set(visited));
-        result = result.replace(imp.fullMatch, importedContent);
+
+        if (fieldName) {
+          // Extract specific field from front matter
+          const { metadata } = parseFrontMatter(importedContent);
+          if (metadata[fieldName] !== undefined) {
+            result = result.replace(imp.fullMatch, metadata[fieldName]);
+          } else {
+            console.warn(`Field '${fieldName}' not found in ${importPath}`);
+            result = result.replace(imp.fullMatch, `<!-- Field not found: ${fieldName} -->`);
+          }
+        } else {
+          // Recursively process imports in the imported file
+          importedContent = await processImports(importedContent, new Set(visited));
+          result = result.replace(imp.fullMatch, importedContent);
+        }
       } else {
         console.warn(`Could not import: ${importPath} (status: ${response.status})`);
         result = result.replace(imp.fullMatch, `<!-- Import failed: ${imp.filename} -->`);
@@ -76,7 +94,7 @@ async function processImports(markdown, visited = new Set()) {
       result = result.replace(imp.fullMatch, `<!-- Import error: ${imp.filename} -->`);
     }
   }
-  
+
   return result;
 }
 
@@ -109,7 +127,14 @@ function parseFrontMatter(markdown) {
 // Simple markdown to HTML converter
 function markdownToHtml(markdown) {
   let html = markdown;
-  
+
+  // Extract and preserve HTML comments
+  const comments = [];
+  html = html.replace(/<!--[\s\S]*?-->/g, (match) => {
+    comments.push(match);
+    return `\x00COMMENT_${comments.length - 1}\x00`;
+  });
+
   // Headers
   html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
@@ -173,22 +198,45 @@ function markdownToHtml(markdown) {
     return `<ul>${result}</ul>`;
   });
   
-  // Remove trailing newline
-  if (html.endsWith('\n')) {
-    html = html.slice(0, -1);
-  }
-  // Line breaks
-  html = html.replace(/\n\n/g, '</p><p>');
-  html = html.replace(/\n/g, '<br>');
+  // Restore HTML comments before paragraph processing
+  html = html.replace(/\x00COMMENT_(\d+)\x00/g, (_, index) => comments[index]);
 
-  // Wrap in paragraph if not already wrapped
-  if (!html.startsWith('<h') && !html.startsWith('<p')) {
-    html = '<p>' + html + '</p>';
-  }
+  // Split by HTML comments to process text around them
+  const parts = html.split(/(<!--[\s\S]*?-->)/);
+  const processedParts = parts.map((part, i) => {
+    // Even indices are non-comment content, odd indices are comments
+    if (i % 2 === 1) {
+      // This is an HTML comment, return as-is
+      return part;
+    }
+
+    // Process non-comment content
+    let processed = part;
+
+    // Remove trailing newline
+    if (processed.endsWith('\n')) {
+      processed = processed.slice(0, -1);
+    }
+
+    // Line breaks - only process non-empty content
+    if (processed.trim()) {
+      processed = processed.replace(/\n\n/g, '</p><p>');
+      processed = processed.replace(/\n/g, '<br>');
+
+      // Wrap in paragraph if not already wrapped and not empty
+      if (!processed.startsWith('<h') && !processed.startsWith('<p') && !processed.startsWith('</p>')) {
+        processed = '<p>' + processed + '</p>';
+      }
+    }
+
+    return processed;
+  });
+
+  html = processedParts.join('');
 
   // Remove escape characters
   html = html.replace(/\\/g, '');
-  
+
   return html;
 }
 
