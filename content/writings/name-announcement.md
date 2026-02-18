@@ -1,6 +1,9 @@
 ---
 layout: writing
 title: Name Announcement
+type: essay
+blurb: Personal essay announcing name change
+priority: 3
 ---
 
 ## Name Announcement

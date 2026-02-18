@@ -1,8 +1,10 @@
 ---
 layout: project
 title: Thavalon
+type: project
+blurb: Web UI for an Avalon reskin board game
+priority: 6
 ---
-
 ## Thavalon
 
 [Thavalon](https://github.com/aquadrizzt/THavalon) (or Tech House Avalon) was a reskin of [The Resistance: Avalon](https://boardgamegeek.com/boardgame/128882/the-resistance-avalon) by several friends of mine in college. 

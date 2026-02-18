@@ -1,6 +1,9 @@
 ---
 layout: writing
 title: white man angry
+type: essay
+blurb: Poem about anger and grief
+priority: 4
 ---
 
 ## white man angry

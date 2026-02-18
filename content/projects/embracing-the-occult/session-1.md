@@ -1,8 +1,8 @@
 ---
 layout: project
 title: Session 1 | Embracing the Occult
+type: creative
 ---
-
 ## Session 1 of Embracing the Occult; Rejecting the Rational
 
 [Main page for "Embracing the Occult; Rejecting the Rational"](/projects/embracing-the-occult)

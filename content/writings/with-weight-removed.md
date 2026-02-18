@@ -1,6 +1,9 @@
 ---
 layout: writing
 title: With Weight Removed
+type: essay
+blurb: Essay on social media and the sharing of emotions
+priority: 5
 ---
 
 ## With Weight Removed

@@ -1,8 +1,10 @@
 ---
 layout: project
 title: Duolingo
+type: employment
+blurb: 4 years as an engineer and engineering manager at Duolingo
+priority: 5
 ---
-
 ## Duolingo
 
 I started at Duolingo in Dec of 2021. I spent nearly 4 years there across 4 teams: Duolingo for Schools, Media Learning, Growth Infrastructure, and Notifications. I recently left (Nov 2025) to take a career break and explore more of my passions.

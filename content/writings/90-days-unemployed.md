@@ -1,6 +1,9 @@
 ---
-layout: project
+layout: writing
 title: 90 Days Unemployed
+type: reflection
+blurb: Reflections on leaving Duolingo and what's next
+priority: 1
 ---
 
 ## 90 Days Unemployed

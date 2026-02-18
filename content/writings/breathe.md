@@ -1,6 +1,9 @@
 ---
 layout: writing
 title: breathe.
+type: essay
+blurb: Personal essay on panic attacks
+priority: 2
 ---
 
 ## breathe.

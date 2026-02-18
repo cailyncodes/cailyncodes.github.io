@@ -3,7 +3,7 @@ async function* allInCompletionOrder(promises) {
   const pending = promises.map((p, i) =>
     (async () => {
       try { return { i, value: await p }; }
-      catch { /* swallow or rethrow below */ }
+      catch (e) { return { i, error: e }; }
     })()
   );
 
@@ -12,7 +12,11 @@ async function* allInCompletionOrder(promises) {
   while (inFlight.size) {
     const res = await Promise.race(inFlight);
     inFlight.delete(pending[res.i]);
-    if (res?.value !== undefined) yield res.value;
+    if (res.error) {
+      console.error('Promise error:', res.error);
+    } else if (res.value !== undefined) {
+      yield res.value;
+    }
   }
 }
 
@@ -202,7 +206,7 @@ function markdownToHtml(markdown) {
   html = html.replace(/\x00COMMENT_(\d+)\x00/g, (_, index) => comments[index]);
 
   // Split by HTML comments to process text around them
-  const parts = html.split(/(<!--[\s\S]*?-->)/);
+  const parts = html.split(/(<!--[\s\S]*?-->\n)/);
   const processedParts = parts.map((part, i) => {
     // Even indices are non-comment content, odd indices are comments
     if (i % 2 === 1) {
