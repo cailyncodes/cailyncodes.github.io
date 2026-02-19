@@ -3,7 +3,7 @@ layout: project
 title: Riding MTA Start to Finish
 type: adventure
 blurb: Journey to ride every NYC subway line from start to finish
-priority: 3
+priority: 30
 ---
 ## Riding MTA Start to Finish
 

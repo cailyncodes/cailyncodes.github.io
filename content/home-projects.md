@@ -10,13 +10,13 @@ Things built, adventures taken, art made, and jobs worked.
 
 **Current Highlights:**
 
-\- [Embracing the Occult; Rejecting the Rational](/projects/embracing-the-occult)
-@import(projects.embracing-the-occult#blurb)
-
-\- [Biking to Montauk](/projects/biking-montauk)
-@import(projects.biking-montauk#blurb)
+\- [Metrics - A digital art project](/projects/metrics)
+@import(projects.metrics#blurb)
 
 \- [Riding MTA Start to Finish](/projects/mta-riding-start-finish)
 @import(projects.mta-riding-start-finish#blurb)
+
+\- [Embracing the Occult; Rejecting the Rational](/projects/embracing-the-occult)
+@import(projects.embracing-the-occult#blurb)
 
 [View all projects &rarr;](/projects)

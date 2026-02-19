@@ -3,7 +3,7 @@ layout: project
 title: Borders and Othering
 type: creative
 blurb: Interactive project exploring maps as political tools and untold histories
-priority: 4
+priority: 70
 ---
 ## Borders and Othering: (De)Constructing Maps of North America
 

@@ -3,7 +3,7 @@ layout: project
 title: Thavalon
 type: project
 blurb: Web UI for an Avalon reskin board game
-priority: 6
+priority: 60
 ---
 ## Thavalon
 

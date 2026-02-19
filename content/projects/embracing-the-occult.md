@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Embracing the Occult; Rejecting the Rational
-type: creative
+type: project
 blurb: Independent study group exploring esotericism, ritual, and the politics of knowing
-priority: 1
+priority: 40
 ---
 ## Embracing the Occult; Rejecting the Rational: An open inquiry into esotericism, ritual, and the politics of knowing
 

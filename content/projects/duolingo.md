@@ -3,7 +3,7 @@ layout: project
 title: Duolingo
 type: employment
 blurb: 4 years as an engineer and engineering manager at Duolingo
-priority: 5
+priority: 50
 ---
 ## Duolingo
 
