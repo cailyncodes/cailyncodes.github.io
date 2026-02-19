@@ -16,9 +16,6 @@ A collection of thoughts, reflections, and essays. Snapshots into how I see/saw 
 \- [Name Announcement](/writings/name-announcement)
 @import(writings.name-announcement#blurb)
 
-\- [white man angry](/writings/white-man-angry)
-@import(writings.white-man-angry#blurb)
-
 \- [With Weight Removed](/writings/with-weight-removed)
 @import(writings.with-weight-removed#blurb)
 
@@ -26,3 +23,8 @@ A collection of thoughts, reflections, and essays. Snapshots into how I see/saw 
 
 \- [90 Days Unemployed](/writings/90-days-unemployed)
 @import(writings.90-days-unemployed#blurb)
+
+### Poems
+
+\- [white man angry](/writings/white-man-angry)
+@import(writings.white-man-angry#blurb)

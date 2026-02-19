@@ -16,6 +16,9 @@ Things I've built, adventures I've taken, artwork I've made, and where I've been
 \- [Borders and Othering](/projects/borders-and-othering)
 @import(projects.borders-and-othering#blurb)
 
+\- [National Aviary Puzzle Hunt](/projects/national-aviary-puzzle-hunt)
+@import(projects.national-aviary-puzzle-hunt#blurb)
+
 ### Adventures
 
 \- [Riding MTA Start to Finish](/projects/mta-riding-start-finish)

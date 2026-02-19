@@ -7,11 +7,12 @@ const CONTENT_DIR = path.resolve("content");
 // Type display names mapping
 const TYPE_DISPLAY_NAMES = {
   "essay": "Essays",
+  "poem": "Poems",
   "reflection": "Reflections"
 };
 
 // Order in which types should appear
-const TYPE_ORDER = ["essay", "reflection"];
+const TYPE_ORDER = ["essay", "reflection", "poem"];
 
 // Run the generator
 generateContent({

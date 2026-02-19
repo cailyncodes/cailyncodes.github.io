@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: white man angry
-type: essay
+type: poem
 blurb: Poem about anger and grief
 priority: 4
 ---
