@@ -2,7 +2,7 @@
 layout: reading
 title: "Parable of the Sower"
 author: "Octavia Butler"
-date: "2024-02-20"
+date: "2023-06-31"
 blurb: My second favorite book. Highly recommend reading it alongside Emergent Strategy by Adrienne Marie Brown.
 type: "novel"
 ---

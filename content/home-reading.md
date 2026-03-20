@@ -10,6 +10,10 @@ Follow along with the texts that shape my thinking.
 
 **Recent Reads:**
 
+\- [Lost Children Archive](/readings/lost-children-archive)
+__by Valeria Luiselli__
+@import(readings.lost-children-archive#blurb)
+
 \- [The Impossible Community: Realizing Communatarian Anarchism](/readings/the-impossible-community)
 __by John P. Clark__
 @import(readings.the-impossible-community#blurb)
@@ -17,9 +21,5 @@ __by John P. Clark__
 \- [Babel, or the Necessity of Violence](/readings/babel)
 __by R. F. Kuang__
 @import(readings.babel#blurb)
-
-\- [Emergent Strategy](/readings/emergent-strategy)
-__by Adrienne Marie Brown__
-@import(readings.emergent-strategy#blurb)
 
 [See full reading list &rarr;](/reading)

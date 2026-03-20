@@ -8,6 +8,7 @@
   --bg: #ffffff;
   --border: #c0c0c0;
   --highlight: #ffff00;
+  --highlight-hover: #ffffde;
   --surface: #f5f5f5;
   --visited-link: #551a8b;
 
@@ -82,6 +83,35 @@ h3 {
 h4 {
   font-size: 1.1rem;
   color: var(--primary);
+}
+
+/* Excel-like table styling */
+.excel-table {
+  border-collapse: collapse;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9rem;
+  margin: var(--space-md) 0;
+  width: 100%;
+}
+
+.excel-table th,
+.excel-table td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.excel-table th {
+  background-color: var(--surface);
+  font-weight: 600;
+}
+
+.excel-table tbody tr:nth-child(even) {
+  background-color: var(--surface);
+}
+
+.excel-table tbody tr:hover {
+  background-color: var(--highlight-hover);
 }
 
 article + h1, h2, h3, h4, h5, h6 {

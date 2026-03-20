@@ -157,6 +157,33 @@ function markdownToHtml(markdown) {
 
   // Italic
   html = html.replace(/__(.*?)__/gim, '<em>$1</em>');
+
+  // Tables (must process before paragraph processing)
+  html = html.replace(/^\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)+)/gm, (match, headerRow, bodyRows) => {
+    const parseCells = (row) => row.trim().split('|').filter(cell => cell.trim());
+    
+    const headers = parseCells(headerRow);
+    const rows = bodyRows.trim().split('\n').map(parseCells);
+    
+    let table = '<table class="excel-table"><thead><tr>';
+    headers.forEach((header, i) => {
+      table += `<th>${header.trim()}</th>`;
+    });
+    table += '</tr></thead><tbody>';
+    
+    rows.forEach((row) => {
+      // Skip separator rows if any got through
+      if (row.every(cell => /^[-:]+$/.test(cell.trim()))) return;
+      table += '<tr>';
+      row.forEach((cell) => {
+        table += `<td>${cell.trim()}</td>`;
+      });
+      table += '</tr>';
+    });
+    
+    table += '</tbody></table>';
+    return table;
+  });
   
   // Unordered lists (with nesting support)
   html = html.replace(/^[^\\]([ \t]*[\-+] .+$\n?)+/gim, (match) => {

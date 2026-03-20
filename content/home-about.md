@@ -5,7 +5,7 @@ title: About
 
 ## About
 
-I'm a queer, genderfluid, trans woman who's based in NYC. I am focused on transformative justice, community building and mutual aid, and designing social infrastructure towards liberatory futures.
+I'm a queer, genderfluid, trans woman who's based in NYC. I am focused on transformative justice, community building, mutual aid, and designing social infrastructure for liberatory futures.
 
 Recently, I left a career in software engineering where I was a senior engineering manager at Duolingo.
 

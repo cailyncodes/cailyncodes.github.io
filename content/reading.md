@@ -10,6 +10,10 @@ Follow along with the pieces that help shape my thinking about the world or just
 
 ### Novels
 
+\- [Lost Children Archive](/readings/lost-children-archive)
+__by Valeria Luiselli__
+@import(readings.lost-children-archive#blurb)
+
 \- [Babel, or the Necessity of Violence](/readings/babel)
 __by R. F. Kuang__
 @import(readings.babel#blurb)
