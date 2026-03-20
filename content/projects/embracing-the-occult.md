@@ -199,9 +199,6 @@ We will examine how occultism was both weaponized by fascism and reclaimed by fe
 - Jason Josephson-Storm, __The Myth of Disenchantment__ (Part 2 and Conclusion)
     - Link in course materials
     - [Public link](https://dn721900.ca.archive.org/0/items/jason-a.-josephson-storm-the-myth-of-disenchantment-magic-modernity-and-the-birt_202406/Jason%20A.%20Josephson-Storm%20-%20The%20Myth%20of%20Disenchantment_%20Magic%2C%20Modernity%2C%20and%20the%20Birth%20of%20the%20Human%20Sciences%20%282017%29.pdf)
-- Peter Lamborn Wilson (Hakim Bey), __Sacred Drift: Essays on the Margins of Islam__ ("The Anti-Caliph")
-    - [Public link](https://archive.org/details/sacreddriftessay00wils/)
-    - Mystical anarchism through Sufi and heterodox currents.
 - Starhawk, __Dreaming the Dark: Magic, Sex, and Politics__ (Chapters 1, 2, 6, and 7)
     - [Public link](https://archive.org/details/dreamingdarkmagi00star/)
     - Feminist pagan magick as collective liberation; a direct counter to authoritarian occultism.
