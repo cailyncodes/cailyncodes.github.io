@@ -25,6 +25,8 @@ __Sundays: 3pm to 5pm | Tuesday, Wednesdays, Fridays: 6:30pm to 8:30pm__
 
 This eight-week, ten-session open gathering explores the hidden lineages of esoteric thought and their tension with Enlightenment rationality. We approach "the occult" not as superstition but as a set of world-making practices that resist mastery and restore relational ways of knowing. Each session blends reading, dialogue, and esoteric practice, culminating in a communal Winter Solstice ritual.
 
+A note on our reading list: some authors included here hold views we find harmful, abhorrent, or in direct contradiction with the values of this gathering. We include such texts for critical engagement only — to examine, interrogate, and sometimes refuse — not as endorsement. Reading a text is not an act of agreement.
+
 #### Session 1: Why (and how to) study esotericism?
 
 This session we build methodologically what we (could) mean by esotercism in academic study. We also build a foundation for the esoteric as both thought and practice. We begin to explore specifics of the antagonism of capitalism with esoteric belief to motivate further study.
@@ -53,7 +55,7 @@ This session we build methodologically what we (could) mean by esotercism in aca
 
 #### Session 2: What are the Occult and Cosmologies of the Hidden?
 
-We explore multiple traditions of hidden, mystical, or relational knowing to expose how the very idea of “the occult” is culturally bounded and colonial in origin. Specificially, we place Western occultism in dialogue with Islamic and Sufi cosmologies to unlearn colonial hierarchies of mysticism.
+We explore multiple traditions of hidden, mystical, or relational knowing to expose how the very idea of “the occult” is culturally bounded and colonial in origin.
 
 **Readings:**
 
