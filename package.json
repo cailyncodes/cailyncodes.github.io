@@ -4,7 +4,7 @@
   "description": "Personal website for Cailyn Codes",
   "private": true,
   "scripts": {
-    "build": "npm run generate:content && parcel build index.html --dist-dir dist && node scripts/prerender.mjs",
+    "build": "npm run generate:content && parcel build index.html time.html --dist-dir dist && node scripts/prerender.mjs",
     "generate:content": "node scripts/generate-readings.mjs && node scripts/generate-writings.mjs && node scripts/generate-projects.mjs",
     "generate:readings": "node scripts/generate-readings.mjs",
     "generate:writings": "node scripts/generate-writings.mjs",
