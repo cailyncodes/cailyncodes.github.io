@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cailyn's Local Time</title>    
+    </head>
+    <body>
+        <div id="time" style="width: 30%; min-width: 200px; margin: 0 auto;">
+        </div>
+        <script>
+            document.getElementById("time").innerHTML = (new Date()).toLocaleString('en-US', {timeZone: 'Australia/Melbourne', dateStyle: 'full', timeStyle: 'short'})
+        </script>
+    </body>
+</html>
