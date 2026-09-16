@@ -5,7 +5,7 @@
         <title>Cailyn's Local Time</title>    
     </head>
     <body>
-        <div id="time" style="width: 30%; min-width: 200px; margin: 0 auto;">
+        <div id="time" style="width: 30%; min-width: 200px; min-height: 100vh; display: flex; align-items: center; text-align: center; margin: 0 auto; font-size: 30px; font-weight: 500;">
         </div>
         <script>
             document.getElementById("time").innerHTML = (new Date()).toLocaleString('en-US', {timeZone: 'Australia/Melbourne', dateStyle: 'full', timeStyle: 'short'})
