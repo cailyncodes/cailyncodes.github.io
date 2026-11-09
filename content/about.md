@@ -20,11 +20,12 @@ Let it be known, though, I don't reject a present participation in electoral pol
 
 __I share all of this at incredible risk given the current US government's administration, but I feel with incredible importance to be visible in these beliefs and to stand up for the just world I so deeply feel is necessary.__
 
-
 ### On income, formerly
+
 I spent nearly a decade working in tech and tech-adjacent spaces. My initial employment after college was a data engineer for a small government consultancy. I was staffed on a project for the Office of Early Childhood in Connecticut. I transitioned to become the third engineer at an environmentally focused startup. I then made the jump to Duolingo, where I worked in a variety of roles. Most recently, I was a senior engineering manager at Duolingo, leading the Notifications team.
 
 After leaving tech, I become a youth development and mental health coach, working in NYC's public school system. I partnered closely with social workers and mental health counselor to work with young people on emotional regulation and conflict resolution.
 
 ### On income, presently
+
 I'm currently traveling across the South Pacific and minimizing my expenditure by finding home- and farm-stays exchanging labor for room and board.
