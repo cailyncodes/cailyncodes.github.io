@@ -5,9 +5,9 @@ title: About
 
 ## About
 
-I'm a queer, genderfluid, trans woman who's based in NYC. I am focused on transformative justice, community building, mutual aid, and designing social infrastructure for liberatory futures.
+I'm a queer, genderfluid, trans woman who's focused on transformative justice, community building, mutual aid, and designing social infrastructure for liberatory futures. I'm currently nomadic across the South Pacific. 
 
-Recently, I left a career in software engineering where I was a senior engineering manager at Duolingo.
+A year ago, I left a career in tech where I was a senior engineering manager at Duolingo.
 
 My hobbies include biking, watching birds, baking a lot of bread, and playing board games.
 
